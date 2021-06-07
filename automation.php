@@ -40,6 +40,7 @@ if($hps_id != ""){
 
     // FINALIZA INPUT CABEÇALHO CSV
 
+    //DECLARO AS HEADERS DO POST DE EXPORTSTATUS
     $headers = [
         'Content-Type:' => 'application/x-www-form-urlencoded',
         'method' => 'POST'    
@@ -73,7 +74,7 @@ if($hps_id != ""){
         ini_set("default_charset", "UTF-8");
         $ftp_server = "files.umov.me";
         $ftp_username   = "master.kalykimtech";
-        $ftp_password   =  "123";
+        $ftp_password   =  "";
 
         $conn_id = ftp_connect($ftp_server) or die("could not connect to $ftp_server");
 
@@ -217,38 +218,7 @@ if($hps_id != ""){
             $ponteiro = fclose($ponteiro); //fecha o arquivo
     
             echo "Finaliza a linha! <br><br><br>";
-    }
-
-    
-
-// INICIA FTP CONNECT
-// ini_set("default_charset", "UTF-8");
-// $ftp_server = "files.umov.me";
-// $ftp_username   = "master.kalykimtech";
-// $ftp_password   =  "123";
-
-// $conn_id = ftp_connect($ftp_server) or die("could not connect to $ftp_server");
-
-// // login
-// if (@ftp_login($conn_id, $ftp_username, $ftp_password))
-// {
-//   echo "Conectado a $ftp_username@$ftp_server\n";
-//   echo "<br>";
-// }
-// else
-// {
-//   echo "Não foi possível conectar com $ftp_username\n";
-// }
-
-// $remote_file_path = "/importacao/".$arq;
-// ftp_pasv($conn_id, true); // habilitar o modo passivo do FTP...
-// ftp_put($conn_id, $remote_file_path, $arq, FTP_BINARY);
-// ftp_close($conn_id);
-
-
-
-
-    
+    }  
 
     
 
