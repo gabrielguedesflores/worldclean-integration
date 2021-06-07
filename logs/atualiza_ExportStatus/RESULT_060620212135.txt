@@ -1,0 +1,5 @@
+<result>
+  <resourceName>activityHistory</resourceName>
+  <resourceId>278847229</resourceId>
+  <link>/activityHistory/278847229.xml</link>
+</result>
