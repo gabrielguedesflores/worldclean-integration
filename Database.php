@@ -4,8 +4,8 @@
 
 class Database 
 {
-    public $db; //alterei para public - Gabriel Guedes Flores
-    public $order = []; //alterei para public - Gabriel Guedes Flores
+    public $db;
+    public $order = [];
 
     /**
      * Representa a instancia a classe,
@@ -18,7 +18,7 @@ class Database
      */
     protected static  $oInstance;
 
-    public function __construct ($dbname = 'prod_umov_dbview', $host = 'dbview.umov.me', $port = '9999', $user = 'u30219', $pass = 'i7dgTB7UG9Wsj3W3uvcHyYGUoB8RUyNg') 
+    public function __construct ($dbname = 'prod_umov_dbview', $host = 'dbview.umov.me', $port = '9999', $user = 'u30219', $pass = '') 
     {
         $dsn = "pgsql:dbname={$dbname};host={$host};port={$port}";
         
