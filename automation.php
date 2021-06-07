@@ -161,7 +161,7 @@ if($hps_id != ""){
         ini_set("default_charset", "UTF-8");
         $ftp_server = "files.umov.me";
         $ftp_username   = "master.kalykimtech";
-        $ftp_password   =  "123";
+        $ftp_password   =  "123"; 
 
         $conn_id = ftp_connect($ftp_server) or die("could not connect to $ftp_server");
 
