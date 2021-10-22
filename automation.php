@@ -4,7 +4,7 @@ $date = date("dmYHi");
 $path = getcwd();
 
 //aqui faz o get pegando as pedidos que tem o export status false 
-$getExportStatus = simplexml_load_file("https://api.umov.me/CenterWeb/api/30219ecdf079717f41b22bd2320e1644807dde/activityHistory.xml?executionExportStatus=false&activity.alternativeIdentifier=Pedidos");
+$getExportStatus = simplexml_load_file("https://api.umov.me/CenterWeb/api/{apiKey}/activityHistory.xml?executionExportStatus=false&activity.alternativeIdentifier=Pedidos");
 $hps_id = '';
 sleep(2);
 
@@ -105,7 +105,7 @@ if($hps_id != ""){
             $hps_id = utf8_decode($dados["id"]);
             echo "<BR>Echo no hps: $hps_id. <br>";
     
-            $url = "https://api.umov.me/CenterWeb/api/30219ecdf079717f41b22bd2320e1644807dde/activityHistory/$hps_id.xml";
+            $url = "https://api.umov.me/CenterWeb/api/{apiKey}/activityHistory/$hps_id.xml";
             $ini = curl_init();
             curl_setopt($ini, CURLOPT_URL, $url);
             curl_setopt($ini, CURLOPT_POST, 1);
@@ -161,7 +161,7 @@ if($hps_id != ""){
         ini_set("default_charset", "UTF-8");
         $ftp_server = "files.umov.me";
         $ftp_username   = "master.kalykimtech";
-        $ftp_password   =  "123"; 
+        $ftp_password   =  ""; 
 
         $conn_id = ftp_connect($ftp_server) or die("could not connect to $ftp_server");
 
@@ -191,7 +191,7 @@ if($hps_id != ""){
             $hps_id = utf8_decode($dados["id"]);
             //echo "<BR>Echo no hps: $hps_id. <br>";
     
-            $url = "https://api.umov.me/CenterWeb/api/30219ecdf079717f41b22bd2320e1644807dde/activityHistory/$hps_id.xml";
+            $url = "https://api.umov.me/CenterWeb/api/{apiKey}/activityHistory/$hps_id.xml";
             $ini = curl_init();
             curl_setopt($ini, CURLOPT_URL, $url);
             curl_setopt($ini, CURLOPT_POST, 1);
